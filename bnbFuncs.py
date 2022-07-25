@@ -10,6 +10,7 @@ wbnbAbi = json.loads('[{"constant":true,"inputs":[],"name":"name","outputs":[{"n
 
 wbnbContract = web3.eth.contract(address=wbnbAddress, abi=wbnbAbi)
 
+
 def bnbBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(web3.eth.getBalance(address), 'ether')

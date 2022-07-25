@@ -10,6 +10,7 @@ busdAbi = json.loads('[{"inputs":[],"payable":false,"stateMutability":"nonpayabl
 
 busdContract = web3.eth.contract(address=busdAddress, abi=busdAbi)
 
+
 def busdBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(busdContract.functions.balanceOf(address).call(), 'ether')

@@ -1,7 +1,6 @@
 import nextcord, os
 from nextcord.ext import commands
 
-
 intents = nextcord.Intents.default()
 intents.message_content = True
 
