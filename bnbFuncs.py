@@ -1,4 +1,3 @@
-from os import curdir
 from web3 import Web3
 from dripFuncs import *
 import json, requests, decimal
