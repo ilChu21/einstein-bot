@@ -103,6 +103,10 @@ class Drip(commands.Cog):
             totalPrincipal = 0
             totalClaimed = 0
             totalHydrates = 0
+            totalNDV = 0
+            totalRealClaims = 0
+            totalRemMaxPayout = 0
+            
             count = 1
 
             if decimal.Decimal(dripDEXPrice()) > decimal.Decimal(dripPCSPrice()):
@@ -127,7 +131,7 @@ class Drip(commands.Cog):
                 )
 
                 userDetails = walletDetails(wallet)
-                totalPrincipal = totalPrincipal + userDetails['deposits'] - userDetails['hydrates'] - userDetails['teamRewards'] - userDetails['airdropsR']
+                totalPrincipal = totalPrincipal + userDetails['personalPrincipal']
                 totalDeposits = totalDeposits + userDetails['deposits']
                 totalAvailable = totalAvailable + userDetails['available']
                 totalDripBalance = totalDripBalance + dripBalance(wallet)
@@ -136,6 +140,9 @@ class Drip(commands.Cog):
                 totalMaxPayout = totalMaxPayout + userDetails['maxPayout']
                 totalClaimed = totalClaimed + userDetails['claimed']
                 totalHydrates = totalHydrates + userDetails['hydrates']
+                totalNDV = totalNDV + userDetails['ndv']
+                totalRealClaims = totalRealClaims + userDetails['realClaims']
+                totalRemMaxPayout = totalRemMaxPayout + userDetails['remMaxPayout']
 
 
                 embed.add_field(
@@ -150,7 +157,7 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="NDV",
-                    value=f"{(userDetails['deposits'] + userDetails['airdropsS'] + userDetails['hydrates']) - userDetails['claimed']:.3f}\n(${((userDetails['deposits'] + userDetails['airdropsS'] + userDetails['hydrates']) - userDetails['claimed']) * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['ndv']:.3f}\n(${userDetails['ndv'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -160,14 +167,13 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Real Claims",
-                    value=f"{userDetails['claimed'] - userDetails['hydrates'] - userDetails['airdropsS']:.3f}"
+                    value=f"{userDetails['realClaims']:.3f}"
                 )
 
                 embed.add_field(
                     name="Max Payout",
                     value=f"{userDetails['maxPayout']:.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice):.2f})"
                 )
-
 
                 embed.add_field(
                     name="Daily Earnings",
@@ -181,7 +187,7 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Remaining Max Payout",
-                    value=f"{userDetails['maxPayout'] - userDetails['claimed']:.3f}\n(${(userDetails['maxPayout'] - userDetails['claimed']) * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['remMaxPayout']:.3f}\n(${(userDetails['remMaxPayout']) * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -211,7 +217,7 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Drip Earned",
-                    value=f"{userDetails['deposits'] - userDetails['personalPrincipal']:.3f}\n(${(userDetails['deposits'] - userDetails['personalPrincipal']) * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['dripEarned']:.3f}\n(${userDetails['dripEarned'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -249,8 +255,23 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
+                    name="Total NDV",
+                    value=f"{totalNDV:.3f}\n(${totalNDV * decimal.Decimal(bestPrice):.2f})"
+                )
+
+                embed.add_field(
                     name="Total Claimed",
                     value=f"{totalClaimed:.3f}\n(${totalClaimed * decimal.Decimal(bestPrice):.2f})"
+                )
+
+                embed.add_field(
+                    name="Total Real Claims",
+                    value=f"{totalRealClaims:.3f}\n(${totalRealClaims * decimal.Decimal(bestPrice):.2f})"
+                )
+
+                embed.add_field(
+                    name="Total Max Payout",
+                    value=f"{totalMaxPayout:.3f}\n(${totalMaxPayout * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -264,8 +285,8 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Total Max Payout",
-                    value=f"{totalMaxPayout:.3f}\n(${totalMaxPayout * decimal.Decimal(bestPrice):.2f})"
+                    name="Total Remaining Max Payout",
+                    value=f"{totalRemMaxPayout:.3f}\n(${totalRemMaxPayout * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
