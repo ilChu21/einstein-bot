@@ -208,13 +208,13 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Hydrates",
-                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})"
+                    name="Personal Principal",
+                    value=f"{userDetails['personalPrincipal']:.3f}"
                 )
 
                 embed.add_field(
-                    name="Personal Principal",
-                    value=f"{userDetails['personalPrincipal']:.3f}"
+                    name="Hydrates",
+                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -292,13 +292,13 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Total Hydrates",
-                    value=f"{totalHydrates:.3f}\n(${totalHydrates * decimal.Decimal(bestPrice):.2f})"
+                    name="Total Personal Principal",
+                    value=f"{totalPrincipal:.3f}"
                 )
 
                 embed.add_field(
-                    name="Total Personal Principal",
-                    value=f"{totalPrincipal:.3f}"
+                    name="Total Hydrates",
+                    value=f"{totalHydrates:.3f}\n(${totalHydrates * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
