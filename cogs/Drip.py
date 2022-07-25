@@ -308,7 +308,7 @@ class Drip(commands.Cog):
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
         except:
-            await interaction.followup.send("Not a valid BSC address. Please ty again.", ephemeral=True)
+            await interaction.followup.send("Not a valid BSC address! Please try again.", ephemeral=True)
 
 
 
