@@ -13,6 +13,8 @@ class Drip(commands.Cog):
     def __init__(self, client):
         self.client = client
 
+
+
     @nextcord.slash_command(
         name='drip',
         description='Description of Drip.'
