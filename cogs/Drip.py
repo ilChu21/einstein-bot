@@ -71,7 +71,7 @@ class Drip(commands.Cog):
 
         embed.add_field(
             name="Reservoir",
-            value=f"Reservoir Players: {reservoirUsers()}\nReservoir Drop Supply: {round(totalDrop(), 3)}\nLocked DROP: {round(lockedDrop(), 3)}",
+            value=f"Reservoir Players: {reservoirUsers()}\nReservoir Drop Supply: {round(totalDrop(), 3)}\nLocked Drop: {round(lockedDrop(), 3)}",
             inline=False
         )
         
