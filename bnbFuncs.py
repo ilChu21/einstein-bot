@@ -22,6 +22,7 @@ def bnbPrice():
     return curBnbPPrice
 
 
+# Not in use. Slighlty off. 
 def curDripPrice():
     fountainBnbBalance = bnbBalance('0x4Fe59AdcF621489cED2D674978132a54d432653A')
     fountainDripBalance = dripBalance('0x4Fe59AdcF621489cED2D674978132a54d432653A')
