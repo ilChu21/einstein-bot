@@ -45,6 +45,14 @@ class Drip(commands.Cog):
 
     async def dripStatsCommand(self, interaction:Interaction):
         pcsAddress = '0xa0feB3c81A36E885B6608DF7f0ff69dB97491b58'
+
+        if decimal.Decimal(dripDEXPrice()) > decimal.Decimal(dripPCSPrice()):
+            dripDexPrice = f"{dripDEXPrice()} 👍"
+            dripPcsPrice = f"{dripPCSPrice()} 👎"
+        else:
+            dripDexPrice = f"{dripDEXPrice()} 👎"
+            dripPcsPrice = f"{dripPCSPrice()} 👍"
+
         embed = nextcord.Embed(
             title="Drip Network Stats",
             description=f"Total Drip Supply: {round(totalDripSupply(), 3)}\nTotal Drip Players: {totalDripPlayers()}",
@@ -53,13 +61,13 @@ class Drip(commands.Cog):
 
         embed.add_field(
             name="PancakeSwap",
-            value=f"PCS Price: ${dripPCSPrice()}\nPCS Drip Supply: {round(currentPCSSupply(), 3)}\nPCS BUSD Supply: {round(busdBalance(pcsAddress), 3)}",
+            value=f"PCS Price: ${dripPcsPrice}\nPCS Drip Supply: {round(currentPCSSupply(), 3)}\nPCS BUSD Supply: {round(busdBalance(pcsAddress), 3)}",
             inline=True
         )
 
         embed.add_field(
             name="Fountain",
-            value=f"Fountain Price: ${dripDEXPrice()}\nFountain Drip Supply: {round(currentFountainSupply(), 3)}\nFountain BNB Supply: {round(fountainBnbBalance(), 3)}",
+            value=f"Fountain Price: ${dripDexPrice}\nFountain Drip Supply: {round(currentFountainSupply(), 3)}\nFountain BNB Supply: {round(fountainBnbBalance(), 3)}",
             inline=False
         )
 
