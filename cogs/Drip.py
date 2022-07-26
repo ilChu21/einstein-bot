@@ -149,22 +149,26 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Available",
-                    value=f"{userDetails['available']:.3f}\n(${userDetails['available'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['available']:.3f}\n(${userDetails['available'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Deposits",
-                    value=f"{userDetails['deposits']:.3f}\n(${userDetails['deposits'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['deposits']:.3f}\n(${userDetails['deposits'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="NDV",
-                    value=f"{userDetails['ndv']:.3f}\n(${userDetails['ndv'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['ndv']:.3f}\n(${userDetails['ndv'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Claimed",
                     value=f"{userDetails['claimed']:.3f}\n(${userDetails['claimed'] * decimal.Decimal(bestPrice):.2f})"
+                    inline=True
                 )
 
                 embed.add_field(
