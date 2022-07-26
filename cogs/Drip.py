@@ -167,7 +167,7 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Claimed",
-                    value=f"{userDetails['claimed']:.3f}\n(${userDetails['claimed'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['claimed']:.3f}\n(${userDetails['claimed'] * decimal.Decimal(bestPrice):.2f})",
                     inline=True
                 )
 
