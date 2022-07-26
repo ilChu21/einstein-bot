@@ -173,62 +173,74 @@ class Drip(commands.Cog):
 
                 embed.add_field(
                     name="Real Claims",
-                    value=f"{userDetails['realClaims']:.3f}"
+                    value=f"{userDetails['realClaims']:.3f}",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Max Payout",
-                    value=f"{userDetails['maxPayout']:.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['maxPayout']:.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Daily Earnings",
-                    value=f"{userDetails['deposits']*decimal.Decimal(0.01):.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice)/365:.2f})"
+                    value=f"{userDetails['deposits']*decimal.Decimal(0.01):.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice)/365:.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Monthly Earnings",
-                    value=f"{(userDetails['deposits']*decimal.Decimal(0.01) * 30):.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice)/12:.2f})"
+                    value=f"{(userDetails['deposits']*decimal.Decimal(0.01) * 30):.3f}\n(${userDetails['maxPayout'] * decimal.Decimal(bestPrice)/12:.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Remaining Max Payout",
-                    value=f"{userDetails['remMaxPayout']:.3f}\n(${(userDetails['remMaxPayout']) * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['remMaxPayout']:.3f}\n(${(userDetails['remMaxPayout']) * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Team Rewards Received",
-                    value=f"{userDetails['teamRewards']:.3f}\n(${userDetails['teamRewards'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['teamRewards']:.3f}\n(${userDetails['teamRewards'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Airdrops Received",
-                    value=f"{userDetails['airdropsR']:.3f}\n(${userDetails['airdropsR'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['airdropsR']:.3f}\n(${userDetails['airdropsR'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Airdrops Sent",
-                    value=f"{userDetails['airdropsS']:.3f}\n(${userDetails['airdropsS'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['airdropsS']:.3f}\n(${userDetails['airdropsS'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Personal Principal",
-                    value=f"{userDetails['personalPrincipal']:.3f}"
+                    value=f"{userDetails['personalPrincipal']:.3f}",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Hydrates",
-                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Drip Earned",
-                    value=f"{userDetails['dripEarned']:.3f}\n(${userDetails['dripEarned'] * decimal.Decimal(bestPrice):.2f})"
+                    value=f"{userDetails['dripEarned']:.3f}\n(${userDetails['dripEarned'] * decimal.Decimal(bestPrice):.2f})",
+                    inline=True
                 )
 
                 embed.add_field(
                     name="Team",
-                    value=f"{userDetails['referrals']}/{userDetails['totalStructure']}"
+                    value=f"{userDetails['referrals']}/{userDetails['totalStructure']}",
+                    inline=True
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
