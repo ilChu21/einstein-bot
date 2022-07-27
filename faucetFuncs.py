@@ -50,10 +50,9 @@ def walletDetails(address):
     
     personalPrincipal = deposits - hydrates - teamRewards - airdropsR
     ndv = (deposits + airdropsS + hydrates) - claimed
-    realClaims = claimed - hydrates - airdropsS
     remMaxPayout = maxPayout - claimed
     dripEarned = deposits - personalPrincipal
     
     return {'upline': upline, 'referrals': referrals, 'totalStructure': totalStructure, 'teamRewards': teamRewards, 
         'deposits': deposits, 'depositTime': depositTime, 'hydrates': hydrates, 'maxPayout': maxPayout, 
-        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, "ndv": ndv, "realClaims": realClaims, "remMaxPayout": remMaxPayout, "dripEarned": dripEarned}
+        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, "ndv": ndv, "remMaxPayout": remMaxPayout, "dripEarned": dripEarned}

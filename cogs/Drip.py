@@ -114,7 +114,6 @@ class Drip(commands.Cog):
             totalClaimed = 0
             totalHydrates = 0
             totalNDV = 0
-            totalRealClaims = 0
             totalRemMaxPayout = 0
             
             count = 1
@@ -151,7 +150,6 @@ class Drip(commands.Cog):
                 totalClaimed = totalClaimed + userDetails['claimed']
                 totalHydrates = totalHydrates + userDetails['hydrates']
                 totalNDV = totalNDV + userDetails['ndv']
-                totalRealClaims = totalRealClaims + userDetails['realClaims']
                 totalRemMaxPayout = totalRemMaxPayout + userDetails['remMaxPayout']
 
 
@@ -171,13 +169,13 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Claimed",
-                    value=f"{userDetails['claimed']:.3f}\n(${userDetails['claimed'] * decimal.Decimal(bestPrice):.2f})"
+                    name="Hydrates",
+                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
-                    name="Real Claims",
-                    value=f"{userDetails['realClaims']:.3f}"
+                    name="Claimed",
+                    value=f"{userDetails['claimed']:.3f}\n(${userDetails['claimed'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -218,11 +216,6 @@ class Drip(commands.Cog):
                 embed.add_field(
                     name="Personal Principal",
                     value=f"{userDetails['personalPrincipal']:.3f}"
-                )
-
-                embed.add_field(
-                    name="Hydrates",
-                    value=f"{userDetails['hydrates']:.3f}\n(${userDetails['hydrates'] * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -270,13 +263,13 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Total Claimed",
-                    value=f"{totalClaimed:.3f}\n(${totalClaimed * decimal.Decimal(bestPrice):.2f})"
+                    name="Total Hydrates",
+                    value=f"{totalHydrates:.3f}\n(${totalHydrates * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
-                    name="Total Real Claims",
-                    value=f"{totalRealClaims:.3f}\n(${totalRealClaims * decimal.Decimal(bestPrice):.2f})"
+                    name="Total Claimed",
+                    value=f"{totalClaimed:.3f}\n(${totalClaimed * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
@@ -302,11 +295,6 @@ class Drip(commands.Cog):
                 embed.add_field(
                     name="Total Personal Principal",
                     value=f"{totalPrincipal:.3f}"
-                )
-
-                embed.add_field(
-                    name="Total Hydrates",
-                    value=f"{totalHydrates:.3f}\n(${totalHydrates * decimal.Decimal(bestPrice):.2f})"
                 )
 
                 embed.add_field(
