@@ -20,5 +20,6 @@ class Ooze(commands.Cog):
     async def oozePriceCommand(self, interaction:Interaction):
         await interaction.response.send_message(f"Ooze Price - ${oozePrice()}")
 
+
 def setup(client):
     client.add_cog(Ooze(client))
