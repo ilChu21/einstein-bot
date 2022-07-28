@@ -26,13 +26,11 @@ class Schedules(commands.Cog):
 
         for channel, priceFuncs in zip(channels, prices):
             channelID = self.client.get_channel(channels[channel])
-            await channelID.edit(name=f"{channel}{priceFuncs}")
-            print(f"{channel}{priceFuncs}")
+            await channelID.edit(name=f"{channel}{int(priceFuncs)}")
 
         now = datetime.datetime.now()
         time = now.strftime("%I:%M %p")
         await pricesCategory.edit(name=f"💲 | PRICES AS OF - {time} |")
-        print(f"💲 | PRICES - {time} |\n")
 
 
     @commands.Cog.listener()
