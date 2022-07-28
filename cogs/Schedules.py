@@ -56,7 +56,7 @@ class Schedules(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        self.schedule_5min_prices.start()
+        #self.schedule_5min_prices.start()
 
 
 def setup(client):
