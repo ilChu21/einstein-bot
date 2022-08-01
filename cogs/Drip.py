@@ -103,7 +103,7 @@ class Drip(commands.Cog):
     ):
         await interaction.response.defer(ephemeral=True)
         try:
-            addresses = arg.split(',')
+            addresses = arg.replace(" ", "").split(',')
             totalDeposits = 0
             totalAvailable = 0
             totalDripBalance = 0
