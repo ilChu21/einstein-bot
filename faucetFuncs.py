@@ -15,6 +15,13 @@ def dripPCSPrice():
     curDripPCSPrice = decimal.Decimal(dripPCSPrices['data']['price'])
     curDripPCSPrice = format(curDripPCSPrice, '.2f')
     return curDripPCSPrice
+
+
+def afpPCSPrice():
+    afpPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0x9a3321E1aCD3B9F6debEE5e042dD2411A1742002').text)
+    curAfpPCSPrice = decimal.Decimal(afpPCSPrices['data']['price'])
+    curAfpPCSPrice = format(curAfpPCSPrice, '.2f')
+    return curAfpPCSPrice
     
     
 def dripDEXPrice():
