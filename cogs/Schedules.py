@@ -30,21 +30,21 @@ class Schedules(commands.Cog):
             if "💲 | PRICES AS OF " in str(chan):
                 priceCategory = chan
                 priceStringCategory = str(chan)[0:17]
-            if "BNB Price: $" in str(chan):
+            if "BNB: $" in str(chan):
                 channels.append(chan)
-                channelStrings.append(str(chan)[0:12])
-            if "Drip DEX Price: $" in str(chan):
+                channelStrings.append(str(chan)[0:6])
+            if "Drip DEX: $" in str(chan):
                 channels.append(chan)
-                channelStrings.append(str(chan)[0:17])
-            if "Drip PCS Price: $" in str(chan):
+                channelStrings.append(str(chan)[0:11])
+            if "Drip PCS: $" in str(chan):
                 channels.append(chan)
-                channelStrings.append(str(chan)[0:17])
-            if "Ooze Price: $" in str(chan):
+                channelStrings.append(str(chan)[0:11])
+            if "Ooze: $" in str(chan):
                 channels.append(chan)
-                channelStrings.append(str(chan)[0:13])
-            if "AFP Price: $" in str(chan):
+                channelStrings.append(str(chan)[0:7])
+            if "AFP: $" in str(chan):
                 channels.append(chan)
-                channelStrings.append(str(chan)[0:12])
+                channelStrings.append(str(chan)[0:6])
 
         prices = [dripDEXPrice(), afpPCSPrice(), bnbPrice(), dripPCSPrice(), oozePrice()]
 
