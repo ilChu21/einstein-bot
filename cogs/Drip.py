@@ -6,6 +6,7 @@ from faucetFuncs import *
 from bnbFuncs import *
 from reservoirFuncs import *
 from busdFuncs import *
+from apiPrices import *
 
 
 class Drip(commands.Cog):

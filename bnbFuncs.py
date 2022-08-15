@@ -1,6 +1,8 @@
 from web3 import Web3
 from dripFuncs import *
-import json, requests, decimal
+from apiPrices import *
+import json, decimal
+
 
 bsc = "https://bsc-dataseed.binance.org/"
 web3 = Web3(Web3.HTTPProvider(bsc))
@@ -14,12 +16,6 @@ wbnbContract = web3.eth.contract(address=wbnbAddress, abi=wbnbAbi)
 def bnbBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(web3.eth.getBalance(address), 'ether')
-
-
-def bnbPrice():
-    bnb = json.loads(requests.get('https://api.coingecko.com/api/v3/simple/price?ids=wbnb&vs_currencies=usd').text)
-    curBnbPPrice = bnb['wbnb']['usd']
-    return curBnbPPrice
 
 
 # Not in use. Slighlty off. 

@@ -3,6 +3,7 @@ from nextcord.ext import commands, tasks
 from faucetFuncs import *
 from oozeFuncs import *
 from bnbFuncs import *
+from apiPrices import *
 
 
 class Schedules(commands.Cog):

@@ -1,5 +1,5 @@
 from web3 import Web3
-import json, requests
+import json
 
 
 ftm = "https://rpc.ftm.tools"
@@ -17,12 +17,6 @@ slimeContract = web3.eth.contract(address=slimeAddress, abi=slimeAbi)
 
 def oozePrice():
     return round(web3.fromWei(slimeContract.functions.getTokenToCollateralInputPrice(1000000000000000000).call(), 'mwei'), 2)
-
-
-def oozeApiPrice():
-    oozePrices = json.loads(requests.get('https://api.ooze.finance/ooze/price').text)
-    curOozePrice = format(oozePrices[-1]['value'])
-    return curOozePrice
 
 
 def totalSlime():
