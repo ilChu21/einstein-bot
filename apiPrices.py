@@ -20,6 +20,12 @@ def dripPCSPrice():
     return curDripPCSPrice
 
 
+def br34pPrice():
+    br34p = json.loads(requests.get('https://api.coinpaprika.com/v1/tickers/br34p-br34p/').text)
+    curBr34pPrice = round(br34p['quotes']['USD']['price'], 2)
+    return curBr34pPrice
+
+
 def afpPCSPrice():
     afpPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0x9a3321E1aCD3B9F6debEE5e042dD2411A1742002').text)
     curAfpPCSPrice = decimal.Decimal(afpPCSPrices['data']['price'])
