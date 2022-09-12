@@ -21,7 +21,7 @@ class Schedules(commands.Cog):
         return guildChannels
 
 
-    @tasks.loop(minutes=5)
+    @tasks.loop(minutes=10)
     async def schedule_5min_prices(self):
         channels = []
         channelStrings = []
