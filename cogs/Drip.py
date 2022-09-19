@@ -130,7 +130,7 @@ class Drip(commands.Cog):
 
                 embed = nextcord.Embed(
                     title=f"Drip Account {count} Summary",
-                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34pBalance(wallet):.3f} (${br34pBalance(wallet) * decimal.Decimal(br34pPrice()):.2f}) ({level}/)\nDROP Balance - {dropBalance(wallet):.3f}\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
+                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34pBalance(wallet):.3f} (${br34pBalance(wallet) * decimal.Decimal(br34pPrice()):.2f}) (/)\nDROP Balance - {dropBalance(wallet):.3f}\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
                     color=nextcord.Color.blue()
                 )
 
