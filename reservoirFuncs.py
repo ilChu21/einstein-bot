@@ -35,5 +35,5 @@ def totalDropSupply():
 
 def dropPrice():
     fountainValue = (fountainBnbBalance() * decimal.Decimal(bnbPrice())) * 2
-    curDropPrice = fountainValue / totalCircDrop()
+    curDropPrice = round(fountainValue / totalCircDrop(), 2)
     return curDropPrice
