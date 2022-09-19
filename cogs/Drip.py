@@ -126,43 +126,9 @@ class Drip(commands.Cog):
                 bestPrice = dripPCSPrice()
 
             for wallet in addresses:
-                br34p = br34pBalance(wallet)
-                if br34p < 2:
-                    level = 0
-                if br34p > 2:
-                    level = 1
-                if br34p > 3:
-                    level = 2
-                if br34p > 5:
-                    level = 3
-                if br34p > 8:
-                    level = 4
-                if br34p > 13:
-                    level = 5
-                if br34p > 21:
-                    level = 6
-                if br34p > 34:
-                    level = 7
-                if br34p > 55:
-                    level = 8
-                if br34p > 89:
-                    level = 9
-                if br34p > 144:
-                    level = 10
-                if br34p > 233:
-                    level = 11
-                if br34p > 377:
-                    level = 12
-                if br34p > 610:
-                    level = 13
-                if br34p > 987:
-                    level = 14
-                if br34p > 1597:
-                    level = 15
-
                 embed = nextcord.Embed(
                     title=f"Drip Account {count} Summary",
-                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34p:.3f} (${br34p * decimal.Decimal(br34pPrice()):.2f}) ({level}/)\nDROP Balance - {dropBalance(wallet):.3f}\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
+                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34pBalance():.3f} (${br34pBalance() * decimal.Decimal(br34pPrice()):.2f}) ({br34pLevels(wallet)}/)\nDROP Balance - {dropBalance(wallet):.3f}\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
                     color=nextcord.Color.blue()
                 )
 

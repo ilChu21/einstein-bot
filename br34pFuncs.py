@@ -12,3 +12,42 @@ br34pContract = web3.eth.contract(address=br34pAddress, abi=br34pAbi)
 def br34pBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(br34pContract.functions.balanceOf(address).call(), 'shannon') * 10
+
+
+def br34pLevels(address):
+    br34p = br34pBalance(address)
+    if br34p < 2:
+        level = 0
+    if br34p > 2:
+        level = 1
+    if br34p > 3:
+        level = 2
+    if br34p > 5:
+        level = 3
+    if br34p > 8:
+        level = 4
+    if br34p > 13:
+        level = 5
+    if br34p > 21:
+        level = 6
+    if br34p > 34:
+        level = 7
+    if br34p > 55:
+        level = 8
+    if br34p > 89:
+        level = 9
+    if br34p > 144:
+        level = 10
+    if br34p > 233:
+        level = 11
+    if br34p > 377:
+        level = 12
+    if br34p > 610:
+        level = 13
+    if br34p > 987:
+        level = 14
+    if br34p > 1597:
+        level = 15
+
+    return level
+    
