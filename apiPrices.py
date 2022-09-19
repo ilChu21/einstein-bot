@@ -7,6 +7,13 @@ def bnbPrice():
     return curBnbPPrice
 
 
+def busdPrice():
+    dogPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0xe9e7cea3dedca5984780bafc599bd69add087d56').text)
+    curBusdPrice = decimal.Decimal(dogPCSPrices['data']['price'])
+    curBusdPrice = format(curBusdPrice, '.2f')
+    return curBusdPrice
+
+
 def dripDEXPrice():
     dripDEXPrices = json.loads(requests.get('https://api.drip.community/prices/').text)
     curDripDEXPrice = format(dripDEXPrices[-1]['value'], '.2f')
