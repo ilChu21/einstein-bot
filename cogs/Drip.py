@@ -127,38 +127,6 @@ class Drip(commands.Cog):
 
             for wallet in addresses:
                 br34pBalance = br34pBalance(wallet)
-                if br34pBalance < 2:
-                    level = 0
-                if br34pBalance > 2:
-                    level = 1
-                if br34pBalance > 3:
-                    level = 2
-                if br34pBalance > 5:
-                    level = 3
-                if br34pBalance > 8:
-                    level = 4
-                if br34pBalance > 13:
-                    level = 5
-                if br34pBalance > 21:
-                    level = 6
-                if br34pBalance > 34:
-                    level = 7
-                if br34pBalance > 55:
-                    level = 8
-                if br34pBalance > 89:
-                    level = 9
-                if br34pBalance > 144:
-                    level = 10
-                if br34pBalance > 233:
-                    level = 11
-                if br34pBalance > 377:
-                    level = 12
-                if br34pBalance > 610:
-                    level = 13
-                if br34pBalance > 987:
-                    level = 14
-                if br34pBalance > 1597:
-                    level = 15
 
                 embed = nextcord.Embed(
                     title=f"Drip Account {count} Summary",
