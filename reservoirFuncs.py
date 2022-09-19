@@ -10,6 +10,11 @@ reservoirAbi = json.loads('[{"constant":true,"inputs":[{"name":"_customerAddress
 reservoirContract = web3.eth.contract(address=reservoirAddress, abi=reservoirAbi)
 
 
+def dropBalance(address):
+    address = web3.toChecksumAddress(address)
+    return web3.fromWei(reservoirContract.functions.balanceOf(address).call(), 'ether')
+
+
 def lockedDrop():
     return web3.fromWei(reservoirContract.functions.lockedTokenBalance().call(), 'ether')
 
