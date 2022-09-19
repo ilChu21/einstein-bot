@@ -128,7 +128,7 @@ class Drip(commands.Cog):
             for wallet in addresses:
                 embed = nextcord.Embed(
                     title=f"Drip Account {count} Summary",
-                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34pBalance(wallet):.3f} (${br34pBalance(wallet) * decimal.Decimal(br34pPrice()):.2f}) ({br34pLevels(wallet)}/)\nDROP Balance - {dropBalance(wallet):.3f}\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
+                    description=f"Drip Balance - {dripBalance(wallet):.3f} (${dripBalance(wallet) * decimal.Decimal(bestPrice):.2f})\nBR34P Balance - {br34pBalance(wallet):.3f} (${br34pBalance(wallet) * decimal.Decimal(br34pPrice()):.2f}) ({br34pLevels(wallet)}/)\nDROP Balance - {dropBalance(wallet):.3f} (${dropBalance(wallet) * decimal.Decimal(dropPrice()):.2f})\nBNB Balance - {bnbBalance(wallet):.3f} (${bnbBalance(wallet) * decimal.Decimal(bnbPrice()):.2f})\nBUSD Balance - {busdBalance(wallet):.3f} (${busdBalance(wallet) * decimal.Decimal(busdPrice()):.2f})",
                     color=nextcord.Color.blue()
                 )
 
@@ -138,7 +138,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.set_footer(
-                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBNB: ${bnbPrice()}"
+                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}"
                 )
 
                 userDetails = walletDetails(wallet)

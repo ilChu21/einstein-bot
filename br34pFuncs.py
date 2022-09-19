@@ -50,4 +50,3 @@ def br34pLevels(address):
         level = 15
 
     return level
-    

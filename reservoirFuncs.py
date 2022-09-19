@@ -1,5 +1,7 @@
 from web3 import Web3
-import json
+from dripFuncs import *
+from apiPrices import *
+import json, decimal
 
 bsc = "https://bsc-dataseed.binance.org/"
 web3 = Web3(Web3.HTTPProvider(bsc))
@@ -29,3 +31,9 @@ def totalDrop():
 
 def totalDropSupply():
     return web3.fromWei(reservoirContract.functions.totalSupply().call(), 'ether')
+
+
+def dropPrice():
+    fountainValue = (fountainBnbBalance() * decimal.Decimal(bnbPrice())) * 2
+    curDropPrice = fountainValue / totalCircDrop()
+    return curDropPrice
