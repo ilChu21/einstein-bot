@@ -220,7 +220,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Personal Principal",
+                    name="Real Deposits",
                     value=f"{userDetails['personalPrincipal']:.3f}"
                 )
 
@@ -299,7 +299,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.add_field(
-                    name="Total Personal Principal",
+                    name="Total Real Deposits",
                     value=f"{totalPrincipal:.3f}"
                 )
 
