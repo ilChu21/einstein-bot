@@ -44,4 +44,4 @@ def walletDetails(address):
     
     return {'upline': upline, 'referrals': referrals, 'totalStructure': totalStructure, 'teamRewards': teamRewards, 
         'deposits': deposits, 'depositTime': depositTime, 'hydrates': hydrates, 'maxPayout': maxPayout, 
-        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, "ndv": ndv, "remMaxPayout": remMaxPayout, "dripEarned": dripEarned, "realClaims": realClaims}
+        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, 'ndv': ndv, 'remMaxPayout': remMaxPayout, 'dripEarned': dripEarned, 'realClaims': realClaims}
