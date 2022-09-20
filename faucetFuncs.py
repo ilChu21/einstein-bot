@@ -37,11 +37,10 @@ def walletDetails(address):
     airdropsR = web3.fromWei(airdrops[1], 'ether')
     
     personalPrincipal = deposits - hydrates - teamRewards - airdropsR
-    realClaims = claimed - hydrates - airdropsS
     ndv = (deposits + airdropsS + hydrates) - claimed
     remMaxPayout = maxPayout - claimed
     dripEarned = deposits - personalPrincipal
     
     return {'upline': upline, 'referrals': referrals, 'totalStructure': totalStructure, 'teamRewards': teamRewards, 
         'deposits': deposits, 'depositTime': depositTime, 'hydrates': hydrates, 'maxPayout': maxPayout, 
-        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, 'ndv': ndv, 'remMaxPayout': remMaxPayout, 'dripEarned': dripEarned, 'realClaims': realClaims}
+        'airdropsS': airdropsS, 'airdropsR': airdropsR, 'personalPrincipal': personalPrincipal, 'available': available, 'claimed': claimed, 'ndv': ndv, 'remMaxPayout': remMaxPayout, 'dripEarned': dripEarned}
