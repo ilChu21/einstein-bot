@@ -1,5 +1,6 @@
+from unicodedata import decimal
 from web3 import Web3
-import json
+import json, decimal
 
 bsc = "https://bsc-dataseed.binance.org/"
 web3 = Web3(Web3.HTTPProvider(bsc))
@@ -34,9 +35,9 @@ def walletDetails(address):
     maxPayout = web3.fromWei(payouts[1], 'ether')
     airdropsS = web3.fromWei(airdrops[0], 'ether')
     airdropsR = web3.fromWei(airdrops[1], 'ether')
-    
+
     personalPrincipal = deposits - hydrates - teamRewards - airdropsR
-    realClaims = claimed - hydrates- airdropsS
+    realClaims = claimed - (hydrates + (hydrates * decimal.Decimal(0.1))) - airdropsS
     ndv = (deposits + airdropsS + hydrates) - claimed
     remMaxPayout = maxPayout - claimed
     dripEarned = deposits - personalPrincipal
