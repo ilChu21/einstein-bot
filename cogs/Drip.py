@@ -224,10 +224,10 @@ class Drip(commands.Cog):
                     value=f"{userDetails['personalPrincipal']:.3f}"
                 )
 
-                embed.add_field(
-                    name="Real Claims",
-                    value=f"{userDetails['realClaims']:.3f}"
-                )
+                #embed.add_field(
+                #    name="Real Claims",
+                #    value=f"{userDetails['realClaims']:.3f}"
+                #)
 
                 embed.add_field(
                     name="Drip Earned",

@@ -37,7 +37,7 @@ def walletDetails(address):
     airdropsR = web3.fromWei(airdrops[1], 'ether')
 
     personalPrincipal = deposits - hydrates - teamRewards - airdropsR
-    realClaims = claimed - (hydrates + (hydrates * decimal.Decimal(0.1))) - airdropsS
+    realClaims = claimed - hydrates - airdropsS
     ndv = (deposits + airdropsS + hydrates) - claimed
     remMaxPayout = maxPayout - claimed
     dripEarned = deposits - personalPrincipal
