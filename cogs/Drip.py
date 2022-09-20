@@ -109,6 +109,8 @@ class Drip(commands.Cog):
             totalDeposits = 0
             totalAvailable = 0
             totalDripBalance = 0
+            totalBr34pBalance = 0
+            totalDropBalance = 0
             totalBnbBalance = 0
             totalBusdBalance = 0
             totalMaxPayout = 0
@@ -146,6 +148,8 @@ class Drip(commands.Cog):
                 totalDeposits = totalDeposits + userDetails['deposits']
                 totalAvailable = totalAvailable + userDetails['available']
                 totalDripBalance = totalDripBalance + dripBalance(wallet)
+                totalBr34pBalance = totalBr34pBalance + br34pBalance(wallet)
+                totalDropBalance = totalDropBalance + dropBalance(wallet)
                 totalBnbBalance = totalBnbBalance + bnbBalance(wallet)
                 totalBusdBalance = totalBusdBalance + busdBalance(wallet)
                 totalMaxPayout = totalMaxPayout + userDetails['maxPayout']
@@ -236,7 +240,7 @@ class Drip(commands.Cog):
             if len(addresses) > 1:
                 embed = nextcord.Embed(
                     title=f"Total Accounts Summary - {len(addresses)} Wallets",
-                    description=f"Total Drip Balance - {totalDripBalance:.3f} (${totalDripBalance * decimal.Decimal(bestPrice):.2f})\nTotal BNB Balance - {totalBnbBalance:.3f} (${totalBnbBalance * decimal.Decimal(bnbPrice()):.2f})\nTotal BUSD Balance - {totalBusdBalance:.3f} (${totalBusdBalance:.2f})",
+                    description=f"Total Drip Balance - {totalDripBalance:.3f} (${totalDripBalance * decimal.Decimal(bestPrice):.2f})\nTotal BR34P Balance - {totalBr34pBalance:.3f} (${totalBr34pBalance * decimal.Decimal(br34pPrice()):.2f})\nTotal DROP Balance - {totalDropBalance:.3f} (${totalDropBalance * decimal.Decimal(dropPrice()):.2f})\nTotal BNB Balance - {totalBnbBalance:.3f} (${totalBnbBalance * decimal.Decimal(bnbPrice()):.2f})\nTotal BUSD Balance - {totalBusdBalance:.3f} (${totalBusdBalance * decimal.Decimal(busdPrice()):.2f})",
                     color=nextcord.Color.blue()
                 )
 
@@ -246,7 +250,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.set_footer(
-                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBNB: ${bnbPrice()}"
+                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}"
                 )
 
                 embed.add_field(
