@@ -21,8 +21,8 @@ class Schedules(commands.Cog):
         return guildChannels
 
 
-    @tasks.loop(minutes=10)
-    async def schedule_10min_prices(self):
+    @tasks.loop(minutes=5)
+    async def schedule_5min_prices(self):
         channels = []
         channelStrings = []
         allChannels = self.getGuildChannels()
@@ -63,7 +63,7 @@ class Schedules(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        self.schedule_10min_prices.start()
+        self.schedule_5min_prices.start()
 
 
 def setup(client):

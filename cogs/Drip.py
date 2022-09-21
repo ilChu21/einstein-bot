@@ -49,11 +49,11 @@ class Drip(commands.Cog):
         pcsAddress = '0xa0feB3c81A36E885B6608DF7f0ff69dB97491b58'
 
         if decimal.Decimal(dripDEXPrice()) > decimal.Decimal(dripPCSPrice()):
-            dripDexPrice = f"**{dripDEXPrice()}**"
+            dripDexPrice = f"{dripDEXPrice()}✅"
             dripPcsPrice = f"{dripPCSPrice()}"
         else:
             dripDexPrice = f"{dripDEXPrice()}"
-            dripPcsPrice = f"**{dripPCSPrice()}**"
+            dripPcsPrice = f"{dripPCSPrice()}✅"
 
         embed = nextcord.Embed(
             title="Drip Network Stats",
@@ -123,12 +123,8 @@ class Drip(commands.Cog):
             count = 1
 
             if decimal.Decimal(dripDEXPrice()) > decimal.Decimal(dripPCSPrice()):
-                dripDexPrice = f"**{dripDEXPrice()}**"
-                dripPcsPrice = f"{dripPCSPrice()}"
                 bestPrice = dripDEXPrice()
             else:
-                dripDexPrice = f"{dripDEXPrice()}"
-                dripPcsPrice = f"**{dripPCSPrice()}**"
                 bestPrice = dripPCSPrice()
 
             for wallet in addresses:
@@ -144,7 +140,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.set_footer(
-                    text=f"Drip DEX: ${dripDexPrice}\nDrip PCS: ${dripPcsPrice}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}\nBUSD: ${busdPrice()}"
+                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}\nBUSD: ${busdPrice()}"
                 )
 
                 userDetails = walletDetails(wallet)
@@ -259,7 +255,7 @@ class Drip(commands.Cog):
                 )
 
                 embed.set_footer(
-                    text=f"Drip DEX: ${dripDexPrice}\nDrip PCS: ${dripPcsPrice}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}"
+                    text=f"Drip DEX: ${dripDEXPrice()}\nDrip PCS: ${dripPCSPrice()}\nBR34P: ${br34pPrice()}\nDROP: ${dropPrice()}\nBNB: ${bnbPrice()}"
                 )
 
                 embed.add_field(
