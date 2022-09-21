@@ -2,6 +2,7 @@ import nextcord
 from nextcord.ext import commands
 from nextcord import Interaction
 from oozeFuncs import *
+from apiPrices import *
 
 
 class Ooze(commands.Cog):
@@ -18,7 +19,7 @@ class Ooze(commands.Cog):
 
 
     async def oozePriceCommand(self, interaction:Interaction):
-        await interaction.response.send_message(f"Ooze Price - ${oozePrice()}")
+        await interaction.response.send_message(f"Ooze Price - ${oozeApiPrice()}")
 
 
 def setup(client):
