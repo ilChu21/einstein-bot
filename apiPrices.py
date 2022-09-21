@@ -49,5 +49,5 @@ def dogPCSPrice():
 
 def oozeApiPrice():
     oozePrices = json.loads(requests.get('https://api.ooze.finance/ooze/price').text)
-    curOozePrice = round(oozePrices[-1]['value'], 2)
+    curOozePrice = oozePrices[-1]['value']
     return curOozePrice
