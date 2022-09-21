@@ -49,11 +49,11 @@ class Drip(commands.Cog):
         pcsAddress = '0xa0feB3c81A36E885B6608DF7f0ff69dB97491b58'
 
         if decimal.Decimal(dripDEXPrice()) > decimal.Decimal(dripPCSPrice()):
-            dripDexPrice = f"{dripDEXPrice()}✅"
+            dripDexPrice = f"{dripDEXPrice()} ✅"
             dripPcsPrice = f"{dripPCSPrice()}"
         else:
             dripDexPrice = f"{dripDEXPrice()}"
-            dripPcsPrice = f"{dripPCSPrice()}✅"
+            dripPcsPrice = f"{dripPCSPrice()} ✅"
 
         embed = nextcord.Embed(
             title="Drip Network Stats",
