@@ -54,7 +54,7 @@ class Schedules(commands.Cog):
                 channels.append(chan)
                 channelStrings.append(str(chan)[0:7])
 
-        prices = [dripDEXPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dripPCSPrice(), oozeApiPrice(), dropPrice()]
+        prices = [dripDEXPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dropPrice(), dripPCSPrice(), oozeApiPrice()]
 
         for channel, priceFuncs, strings in zip(channels, prices, channelStrings):
             await channel.edit(name=f"{str(strings)}{priceFuncs}")
