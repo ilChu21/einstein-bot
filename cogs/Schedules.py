@@ -4,6 +4,7 @@ from faucetFuncs import *
 from oozeFuncs import *
 from bnbFuncs import *
 from apiPrices import *
+from reservoirFuncs import *
 
 
 class Schedules(commands.Cog):
@@ -49,8 +50,11 @@ class Schedules(commands.Cog):
             if "Br34p: $"in str(chan):
                 channels.append(chan)
                 channelStrings.append(str(chan)[0:8])
+            if "DROP: $"in str(chan):
+                channels.append(chan)
+                channelStrings.append(str(chan)[0:7])
 
-        prices = [dripDEXPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dripPCSPrice(), oozeApiPrice()]
+        prices = [dripDEXPrice(), dropPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dripPCSPrice(), oozeApiPrice()]
 
         for channel, priceFuncs, strings in zip(channels, prices, channelStrings):
             await channel.edit(name=f"{str(strings)}{priceFuncs}")
