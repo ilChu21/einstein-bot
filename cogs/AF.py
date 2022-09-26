@@ -32,7 +32,7 @@ class AF(commands.Cog):
             for wallet in addresses:
                 embed = nextcord.Embed(
                     title=f"Animal Farm Crediting Summary",
-                    description=f"Pigs Balance - {pigsBalance(wallet)}\n{dogsBalance(wallet)}\n{afpBalance(wallet)}\n{dogsBusdBalance(wallet)}\n{dogsWbnbBalance(wallet)}\n{pigsBusdBalance(wallet)}",
+                    description=f"Pigs Balance - {pigsBalance(wallet)}\nDogs Balance - {dogsBalance(wallet)}\nAFP Balance - {afpBalance(wallet)}\nDogs/BUSD Balance - {dogsBusdBalance(wallet)}\nDogs/WBNB Balance - {dogsWbnbBalance(wallet)}\nPigs/BUSD Balance - {pigsBusdBalance(wallet)}",
                     color=nextcord.Color.gold()
                 )
 
@@ -45,7 +45,12 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                    value=f"{userDetails['pigOut']})"
+                    value=f"Date Sent: {userDetails['pigOut']}"
+                )
+
+                embed.add_field(
+                    name="Pigs LP (V1) Sent",
+                    value=f"{userDetails['pigLpOut']}"
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
