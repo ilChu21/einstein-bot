@@ -50,7 +50,37 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs LP (V1) Sent",
-                        value=f"Date: {userDetails['pigLpOut'][1]} - Hash: https://bscscan.com/tx/{userDetails['pigLpOut'][0]}"
+                        value=f"Date: {userDetails['pigLpOut']}"
+                )
+
+                embed.add_field(
+                    name="Dogs (V1) Sent",
+                        value=f"Date: {userDetails['dogOut']}"
+                )
+
+                embed.add_field(
+                    name="Dogs/BUSD (V1) Sent",
+                        value=f"Date: {userDetails['dogBusdOut']}"
+                )
+
+                embed.add_field(
+                    name="Dogs/WBNB (V1) Sent",
+                        value=f"Date: {userDetails['dogWbnbOut']}"
+                )
+
+                embed.add_field(
+                    name="AFP (V2) Recieved",
+                        value=f"Date: {userDetails['afpIn']}"
+                )
+
+                embed.add_field(
+                    name="AFD (V2) Recieved",
+                        value=f"Date: {userDetails['afdIn']}"
+                )
+
+                embed.add_field(
+                    name="AFD LP (V2) Recieved",
+                        value=f"Date: {userDetails['afdLpIn']}"
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
