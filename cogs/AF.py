@@ -45,12 +45,12 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                    value=f"Date Sent: {userDetails['pigOut']}"
+                        value=f"{userDetails['pigOut']}"
                 )
 
                 embed.add_field(
                     name="Pigs LP (V1) Sent",
-                    value=f"{userDetails['pigLpOut']}"
+                        value=f"Date: {userDetails['pigLpOut'][1]} - Hash: https://bscscan.com/tx/{userDetails['pigLpOut'][0]}"
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
