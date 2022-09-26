@@ -50,7 +50,7 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs LP (V1) Sent",
-                        value=f"Date: {userDetails['pigLpOut']}"
+                        value=f"Date: {list(userDetails['pigLpOut'])[1]} - Hash: https://bscscan.com/tx/{list(userDetails['pigLpOut'])[0]}"
                 )
 
                 embed.add_field(
