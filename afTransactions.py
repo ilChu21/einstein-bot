@@ -25,29 +25,29 @@ def afCheck(address):
     transactions = json.loads(requests.get(f'https://api.bscscan.com/api?module=account&action=txlist&address={address}&startblock=0&endblock=99999999&sort=asc&apikey={os.environ["BSCSCAN_TOKEN"]}').text)
     for transaction in transactions['result']:
         if transaction['methodId'] == pigcreditingMethodId and transaction['isError'] == '0':
-            pigOut[transaction['hash']] = transaction['timeStamp']
+            pigOut[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == pigLpcreditingMethodId and transaction['isError'] == '0':
             print(transaction['hash'])
-            pigLpOut[transaction['hash']] = transaction['timeStamp']
+            pigLpOut[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == dogCreditingMethodId and transaction['isError'] == '0':
-            dogOut[transaction['hash']] = transaction['timeStamp']
+            dogOut[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == dogBusdCreditingMethodId and transaction['isError'] == '0':
-            dogBusdOut[transaction['hash']] = transaction['timeStamp']
+            dogBusdOut[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == dogWbnbCreditingMethodId and transaction['isError'] == '0':
-            dogWbnbOut[transaction['hash']] = transaction['timeStamp']
+            dogWbnbOut[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == afpClaimMethodId and transaction['isError'] == '0':
-            afpIn[transaction['hash']] = transaction['timeStamp']
+            afpIn[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['functionName'] == afdClaimFunctionName and transaction['isError'] == '0':
-            afdIn[transaction['hash']] = transaction['timeStamp']
+            afdIn[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
         if transaction['methodId'] == afdLpClaimMethodId and transaction['isError'] == '0':
-            afdLpIn[transaction['hash']] = transaction['timeStamp']
+            afdLpIn[f"Date - {transaction['timeStamp']}"] = f"https://bscscan.com/tx/{transaction['hash']}"
 
     return {'pigOut': pigOut, 'pigLpOut': pigLpOut, 'dogOut': dogOut, 'dogBusdOut': dogBusdOut, 'dogWbnbOut': dogWbnbOut,
             'afpIn': afpIn, 'afdIn': afdIn, 'afdLpIn': afdLpIn,}
