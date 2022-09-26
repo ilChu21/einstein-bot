@@ -43,44 +43,45 @@ class AF(commands.Cog):
 
                 userDetails = afCheck(wallet)
 
+
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                        value=f"{userDetails['pigOut']}"
+                    value=f"{userDetails['pigOut']}"
                 )
 
                 embed.add_field(
                     name="Pigs LP (V1) Sent",
-                        value=f"Date: {list(userDetails['pigLpOut'])[1]} - Hash: https://bscscan.com/tx/{list(userDetails['pigLpOut'])[0]}"
+                    value=f"Date: {list(userDetails['pigLpOut']).values()} - Hash: https://bscscan.com/tx/{list(userDetails['pigLpOut']).keys()}"
                 )
 
                 embed.add_field(
                     name="Dogs (V1) Sent",
-                        value=f"Date: {userDetails['dogOut']}"
+                    value=f"Date: {userDetails['dogOut']}"
                 )
 
                 embed.add_field(
                     name="Dogs/BUSD (V1) Sent",
-                        value=f"Date: {userDetails['dogBusdOut']}"
+                    value=f"Date: {userDetails['dogBusdOut']}"
                 )
 
                 embed.add_field(
                     name="Dogs/WBNB (V1) Sent",
-                        value=f"Date: {userDetails['dogWbnbOut']}"
+                    value=f"Date: {userDetails['dogWbnbOut']}"
                 )
 
                 embed.add_field(
                     name="AFP (V2) Recieved",
-                        value=f"Date: {userDetails['afpIn']}"
+                    value=f"Date: {userDetails['afpIn']}"
                 )
 
                 embed.add_field(
                     name="AFD (V2) Recieved",
-                        value=f"Date: {userDetails['afdIn']}"
+                    value=f"Date: {userDetails['afdIn']}"
                 )
 
                 embed.add_field(
                     name="AFD LP (V2) Recieved",
-                        value=f"Date: {userDetails['afdLpIn']}"
+                    value=f"Date: {userDetails['afdLpIn']}"
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
