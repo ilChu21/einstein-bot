@@ -46,42 +46,42 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                    value=f"{userDetails['pigOut']}"
+                    value=f"{userDetails['pigOut'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="Pigs LP (V1) Sent",
-                    value=f"{(userDetails['pigLpOut'])}"
+                    value=f"{userDetails['pigLpOut'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="Dogs (V1) Sent",
-                    value=f"{userDetails['dogOut']}"
+                    value=f"{userDetails['dogOut'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="Dogs/BUSD (V1) Sent",
-                    value=f"{userDetails['dogBusdOut']}"
+                    value=f"{userDetails['dogBusdOut'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="Dogs/WBNB (V1) Sent",
-                    value=f"{userDetails['dogWbnbOut']}"
+                    value=f"{userDetails['dogWbnbOut'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="AFP (V2) Recieved",
-                    value=f"{userDetails['afpIn']}"
+                    value=f"{userDetails['afpIn'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="AFD (V2) Recieved",
-                    value=f"{userDetails['afdIn']}"
+                    value=f"{userDetails['afdIn'].replace('%', '')}"
                 )
 
                 embed.add_field(
                     name="AFD LP (V2) Recieved",
-                    value=f"{userDetails['afdLpIn']}"
+                    value=f"{userDetails['afdLpIn'].replace('%', '')}"
                 )
 
                 await interaction.followup.send(embed=embed, ephemeral=True)
