@@ -46,7 +46,7 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                    value=f"{userDetails['pigOut']}"
+                    value=f"{userDetails['pigOut']}".partition("%")[0]
                 )
 
                 embed.add_field(
