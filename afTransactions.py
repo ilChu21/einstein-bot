@@ -28,42 +28,42 @@ def afCheck(address):
         if transaction['methodId'] == pigcreditingMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            pigOut[f"Date - {date}"] = hashLink
+            pigOut[date] = hashLink
 
         if transaction['methodId'] == pigLpcreditingMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            pigLpOut[f"Date - {date}"] = hashLink
+            pigLpOut[date] = hashLink
 
         if transaction['methodId'] == dogCreditingMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            dogOut[f"Date - {date}"] = hashLink
+            dogOut[date] = hashLink
 
         if transaction['methodId'] == dogBusdCreditingMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            dogBusdOut[f"Date - {date}"] = hashLink
+            dogBusdOut[date] = hashLink
 
         if transaction['methodId'] == dogWbnbCreditingMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            dogWbnbOut[f"Date - {date}"] = hashLink
+            dogWbnbOut[date] = hashLink
 
         if transaction['methodId'] == afpClaimMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            afpIn[f"Date - {date}"] = hashLink
+            afpIn[date] = hashLink
 
         if transaction['functionName'] == afdClaimFunctionName and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            afdIn[f"Date - {date}"] = hashLink
+            afdIn[date] = hashLink
 
         if transaction['methodId'] == afdLpClaimMethodId and transaction['isError'] == '0':
             date = datetime.utcfromtimestamp(transaction['timeStamp']).strftime('%Y-%m-%d %H:%M:%S')
             hashLink = f"Tx Link - https://bscscan.com/tx/{transaction['hash']}"
-            afdLpIn[f"Date - {date}"] = hashLink
+            afdLpIn[date] = hashLink
 
     return {'pigOut': pigOut, 'pigLpOut': pigLpOut, 'dogOut': dogOut, 'dogBusdOut': dogBusdOut, 'dogWbnbOut': dogWbnbOut,
             'afpIn': afpIn, 'afdIn': afdIn, 'afdLpIn': afdLpIn,}
