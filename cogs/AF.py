@@ -46,7 +46,8 @@ class AF(commands.Cog):
 
                 embed.add_field(
                     name="Pigs (V1) Sent",
-                    value=f"{userDetails['pigOut']}"
+                    value=[(key,':',value) for key, value in userDetails['pigOut']]
+                    #value=f"{userDetails['pigOut']}"
                 )
 
                 embed.add_field(
