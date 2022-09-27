@@ -1,8 +1,13 @@
 import json, requests, os
 from datetime import datetime
+from web3 import Web3
+
+bsc = "https://bsc-dataseed.binance.org/"
+web3 = Web3(Web3.HTTPProvider(bsc))
 
 
 def afCheck(address):
+    address = web3.toChecksumAddress(address)
     pigcreditingMethodId = '0x97b0a28a'
     pigLpcreditingMethodId = '0x0a15c37a'
     dogCreditingMethodId = '0xd09f18ce'
