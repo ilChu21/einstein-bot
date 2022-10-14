@@ -20,10 +20,6 @@ def bnbBalance(address):
 
 # Not in use. Slighlty off. 
 def curDripPrice():
-    fountainBnbBalance = bnbBalance('0x4Fe59AdcF621489cED2D674978132a54d432653A')
-    fountainDripBalance = dripBalance('0x4Fe59AdcF621489cED2D674978132a54d432653A')
-    currentBnbPrice = decimal.Decimal(bnbPrice())
-    dripPrice = round(fountainBnbBalance / fountainDripBalance * currentBnbPrice, 2)
-    dripPrice = dripPrice - round(decimal.Decimal(0.11), 2)
+    dripPrice = round(fountainBnbBalance() / fountainDripBalance() * round(decimal.Decimal(bnbPrice()), 2), 2)
     return dripPrice
                              

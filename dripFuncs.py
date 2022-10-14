@@ -20,6 +20,10 @@ def dripBalance(address):
     return web3.fromWei(dripContract.functions.balanceOf(address).call(), 'ether')
 
 
+def fountainDripBalance():
+    return web3.fromWei(fountainContract.functions.tokenBalance().call(), 'ether')
+
+
 def totalDripPlayers():
     return dripContract.functions.players().call()
 
@@ -42,10 +46,6 @@ def fountainBnbBalance():
 
 def currentPCSSupply():
     return web3.fromWei(dripContract.functions.balanceOf(PCSAddress).call(), 'ether')
-
-
-def fountainBnbBalance():
-    return web3.fromWei(fountainContract.functions.bnbBalance().call(), 'ether')
 
 
 def totalCircDrop():
