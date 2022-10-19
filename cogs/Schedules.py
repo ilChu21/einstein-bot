@@ -53,8 +53,11 @@ class Schedules(commands.Cog):
             if "DROP: $"in str(chan):
                 channels.append(chan)
                 channelStrings.append(str(chan)[0:7])
+            if "AFP: $"in str(chan):
+                channels.append(chan)
+                channelStrings.append(str(chan)[0:6])
 
-        prices = [dripDEXPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dropPrice(), dripPCSPrice(), oozeApiPrice()]
+        prices = [dripDEXPrice(), br34pPrice(), afpPCSPrice(), bnbPrice(), dropPrice(), dripPCSPrice(), oozeApiPrice(), afdPCSPrice()]
 
         for channel, priceFuncs, strings in zip(channels, prices, channelStrings):
             await channel.edit(name=f"{str(strings)}{priceFuncs}")

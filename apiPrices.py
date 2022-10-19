@@ -8,8 +8,8 @@ def bnbPrice():
 
 
 def busdPrice():
-    dogPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0xe9e7cea3dedca5984780bafc599bd69add087d56').text)
-    curBusdPrice = decimal.Decimal(dogPCSPrices['data']['price'])
+    busdPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0xe9e7cea3dedca5984780bafc599bd69add087d56').text)
+    curBusdPrice = decimal.Decimal(busdPrices['data']['price'])
     curBusdPrice = format(curBusdPrice, '.2f')
     return curBusdPrice
 
@@ -40,11 +40,11 @@ def afpPCSPrice():
     return curAfpPCSPrice
 
 
-def dogPCSPrice():
-    dogPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0xDBdC73B95cC0D5e7E99dC95523045Fc8d075Fb9e').text)
-    curDogPCSPrice = decimal.Decimal(dogPCSPrices['data']['price'])
-    curDogPCSPrice = format(curDogPCSPrice, '.2f')
-    return curDogPCSPrice
+def afdPCSPrice():
+    afdPCSPrices = json.loads(requests.get('https://api.pancakeswap.info/api/v2/tokens/0x198271b868daE875bFea6e6E4045cDdA5d6B9829').text)
+    curAfdPCSPrice = decimal.Decimal(afdPCSPrices['data']['price'])
+    curAfdPCSPrice = format(curAfdPCSPrice, '.2f')
+    return curAfdPCSPrice
 
 
 def oozeApiPrice():
