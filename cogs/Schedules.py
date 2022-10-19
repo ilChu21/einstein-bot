@@ -53,7 +53,7 @@ class Schedules(commands.Cog):
             if "DROP: $"in str(chan):
                 channels.append(chan)
                 channelStrings.append(str(chan)[0:7])
-            if "AFP: $"in str(chan):
+            if "AFD: $"in str(chan):
                 channels.append(chan)
                 channelStrings.append(str(chan)[0:6])
 
