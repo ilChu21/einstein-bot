@@ -45,9 +45,3 @@ def afdPCSPrice():
     curAfdPCSPrice = decimal.Decimal(afdPCSPrices['data']['price'])
     curAfdPCSPrice = format(curAfdPCSPrice, '.2f')
     return curAfdPCSPrice
-
-
-def oozeApiPrice():
-    oozePrices = json.loads(requests.get('https://api.ooze.finance/ooze/price').text)
-    curOozePrice = oozePrices[-1]['value']
-    return curOozePrice
