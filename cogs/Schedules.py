@@ -1,4 +1,5 @@
 import datetime
+from pytz import timezone
 from nextcord.ext import commands, tasks
 from dripFuncs import *
 from br34pFuncs import *
@@ -59,9 +60,9 @@ class Schedules(commands.Cog):
         for channel, priceFuncs, strings in zip(channels, prices, channelStrings):
             await channel.edit(name=f"{str(strings)}{priceFuncs}")
 
-        now = datetime.datetime.now()
-        adjTime = now - datetime.timedelta(hours=4)
-        time = adjTime.strftime("%I:%M %p")
+        tz = timezone('US/Eastern')
+        now = datetime.datetime.now(tz)
+        time = now.strftime("%I:%M %p")
         await priceCategory.edit(name=f"{priceStringCategory}{time} |")
 
 
