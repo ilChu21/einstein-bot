@@ -1,7 +1,5 @@
 from web3 import Web3
-from dripFuncs import *
-from apiPrices import *
-import json, decimal
+import json
 
 
 bsc = "https://bsc-dataseed.binance.org/"
@@ -16,10 +14,3 @@ wbnbContract = web3.eth.contract(address=wbnbAddress, abi=wbnbAbi)
 def bnbBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(web3.eth.getBalance(address), 'ether')
-
-
-# Not in use. Slighlty off. 
-def curDripPrice():
-    dripPrice = round(fountainBnbBalance() / fountainDripBalance() * round(decimal.Decimal(bnbPrice()), 2), 2)
-    return dripPrice
-                             

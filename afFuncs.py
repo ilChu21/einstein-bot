@@ -1,8 +1,11 @@
 from web3 import Web3
+from pcsRoutersFuncs import *
 import json
 
 bsc = "https://bsc-dataseed.binance.org/"
 web3 = Web3(Web3.HTTPProvider(bsc))
+
+BUSDTokenAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
 
 pigsAddress = '0x3A4C15F96B3b058ab3Fb5FAf1440Cc19E7AE07ce'
 pigsBusdAddress = '0xba6418100dB9B93356bFB6A472411FDCfa2e4141'
@@ -70,3 +73,13 @@ def dogsWbnbBalance(address):
 def pigsBusdBalance(address):
     address = web3.toChecksumAddress(address)
     return web3.fromWei(pigsBusdContract.functions.balanceOf(address).call(), 'ether')
+
+
+def afpPCSPrice():
+    afpAddress = "0x9a3321E1aCD3B9F6debEE5e042dD2411A1742002"
+    return round(calcPCSV2Price(afpAddress, BUSDTokenAddress), 2)
+
+
+def afdPCSPrice():
+    afpAddress = "0x198271b868daE875bFea6e6E4045cDdA5d6B9829"
+    return round(calcPCSV2Price(afpAddress, BUSDTokenAddress), 2)

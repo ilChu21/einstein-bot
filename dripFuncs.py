@@ -1,9 +1,12 @@
 from web3 import Web3
-import json
+from apiPrices import *
+from pcsRoutersFuncs import *
+import json, decimal
 
 bsc = "https://bsc-dataseed.binance.org/"
 web3 = Web3(Web3.HTTPProvider(bsc))
 
+BUSDTokenAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
 dripAddress = '0x20f663CEa80FaCE82ACDFA3aAE6862d246cE0333'
 taxPoolAddress = '0xBFF8a1F9B5165B787a00659216D7313354D25472'
 fountainAddress = '0x4Fe59AdcF621489cED2D674978132a54d432653A'
@@ -50,3 +53,16 @@ def currentPCSSupply():
 
 def totalCircDrop():
     return web3.fromWei(fountainContract.functions.totalSupply().call(), 'ether')
+
+
+def bnbDripRatio():
+    return web3.fromWei(fountainContract.functions.getTokenToBnbInputPrice(1000000000000000000).call(), 'ether')
+
+
+def dripDEXPrice():
+    dripPrice = round(bnbDripRatio() * round(decimal.Decimal(bnbPrice()), 2), 2)
+    return dripPrice
+
+
+def dripPCSPrice():
+    return round(calcPCSV2Price(dripAddress, BUSDTokenAddress), 2)

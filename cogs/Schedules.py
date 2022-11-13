@@ -1,7 +1,8 @@
 import datetime
 from nextcord.ext import commands, tasks
-from faucetFuncs import *
-from bnbFuncs import *
+from dripFuncs import *
+from br34pFuncs import *
+from afFuncs import *
 from apiPrices import *
 from reservoirFuncs import *
 
